@@ -73,13 +73,13 @@ const DocumentsScreen = ({ navigation }) => {
                       <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Certificat de La Capsule : {lacap2}</Text>
                   {br}
                   {br}
-                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Dipôme DUT : {dutdip}</Text>
+                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Diplôme DUT : {dutdip}</Text>
                   {br}
                   {br}
-                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Dipôme BAC : {bacdip}</Text>
+                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Diplôme BAC : {bacdip}</Text>
                   {br}
                   {br}
-                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Level 1 certificate englsih : {level1}</Text>
+                      <MaterialCommunityIcons name='play' color='#9400d3' size={15} /><Text> Level 1 certificate english : {level1}</Text>
                   {br}
                   {br}
                 

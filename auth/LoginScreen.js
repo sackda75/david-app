@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image } from 'react-native'
 import PassMeter from 'react-native-passmeter'
+import * as Animatable from 'react-native-animatable'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -16,18 +17,30 @@ function LoginScreen({navigation}) {
       <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={styles.container} source={require('../assets/fond4.png')} >
 
-            <Image 
+            <Animatable.Image 
+                animation='bounceInDown'
+                duration={1500}
                 style={{width: 150, height: 150, position: 'absolute', top: 1, marginTop: 70}}
                 source={require('../assets/logo1.png')}
             />
 
             <Text style={styles.must}>Se connecter</Text>
+
+              <Animatable.View
+                animation='bounceInRight'
+                duration={1500}
+              >
                 <TextInput 
                     style={styles.input}
                     placeholder="Saisir votre email"
                     onChangeText={email => setEmail(email)}
                 />
+              </Animatable.View>
 
+              <Animatable.View
+                animation='bounceInRight'
+                duration={1500}
+              >
                 <TextInput 
                     style={styles.input}
                     maxLength={15}
@@ -35,24 +48,36 @@ function LoginScreen({navigation}) {
                     placeholder="Saisir votre mot de passe"
                     onChangeText={password => setPassword(password)}
                 />
+              </Animatable.View>
 
-                <View style={{margin: 10}}>
-                <PassMeter
-                    showLabels
-                    password={password}
-                    maxLength={MAX_LEN}
-                    minLength={MIN_LEN}
-                    labels={PASS_LABELS}
-                />
-                </View>
 
-                <TouchableOpacity
-                    style={styles.botao}
-                    activeOpacity = { 0.75 } // number
-                    onPress={() => navigation.navigate('HomeApp')}
+              <Animatable.View
+                animation='bounceInRight'
+                duration={1500}
+              >
+                  <View style={{margin: 10}}>
+                      <PassMeter
+                          showLabels
+                          password={password}
+                          maxLength={MAX_LEN}
+                          minLength={MIN_LEN}
+                          labels={PASS_LABELS}
+                      />
+                  </View>
+                </Animatable.View>
+
+                <Animatable.View
+                  animation='bounceInRight'
+                  duration={1500}
                 >
-                    <Text style={styles.botaoText}>VALIDER</Text>
-                </TouchableOpacity>
+                  <TouchableOpacity
+                      style={styles.botao}
+                      activeOpacity = { 0.75 } // number
+                      onPress={() => navigation.navigate('HomeApp')}
+                  >
+                      <Text style={styles.botaoText}>VALIDER</Text>
+                  </TouchableOpacity>
+                </Animatable.View>
 
                 <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
                     <Text style={styles.must} onPress={() => navigation.navigate('HomeApp')}>Continuer sans s'inscrire</Text>
