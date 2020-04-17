@@ -8,12 +8,24 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import HomeScreen from './tab/HomeScreen'
 import HomeScreenDetail from './tab/HomeScreenDetail'
-import SettingsScreen from './tab/SettingsScreen'
-import SettingsScreenDetail from './tab/SettingsScreenDetail'
-import NotificationsScreen from './drawer/NotificationsScreen'
+
+import JobsScreen from './tab/JobsScreen'
+import JobsScreenDetail from './tab/JobsScreenDetail'
+
+import FormationsScreen from './tab/FormationsScreen'
+import FormationsScreenDetail from './tab/FormationsScreenDetail'
+
+import InformationsScreen from './tab/InformationsScreen'
+import InformationsScreenDetail from './tab/InformationsScreenDetail'
+
+import CustomDrawerContent from './CustomDrawerContent'
+import AboutmeScreen from './drawer/AboutmeScreen'
+import DocumentsScreen from './drawer/DocumentsScreen'
+import MecontacterScreen from './drawer/MecontacterScreen'
+
 import LoginScreen from './auth/LoginScreen'
 import RegisterScreen from './auth/RegisterScreen'
-import CustomDrawerContent from './CustomDrawerContent'
+
 
 
 
@@ -33,19 +45,36 @@ function HomeStack() {
     )
 }
 
-
-
-const StackSetting = createStackNavigator()
-function SettingStack() {
-  return (
-    <StackSetting.Navigator initialRouteName='Settings' headerMode='none'>
-        <StackSetting.Screen name='Settings' component={SettingsScreen} options={navOptionHandler}/>
-        <StackSetting.Screen name='SettingsDetail' component={SettingsScreenDetail} options={navOptionHandler}/>
-    </StackSetting.Navigator>
-  )
+const StackJob = createStackNavigator()
+function JobStack() {
+    return (
+      <StackJob.Navigator initialRouteName='Jobs' headerMode='none'>
+          <StackJob.Screen  name='Jobs' component={JobsScreen} options={navOptionHandler}/>
+          <StackJob.Screen name='JobsDetail' component={JobsScreenDetail} options={navOptionHandler}/>
+      </StackJob.Navigator>
+    )
 }
 
 
+const StackFormation = createStackNavigator()
+function FormationStack() {
+  return (
+    <StackFormation.Navigator initialRouteName='Formations' headerMode='none'>
+        <StackFormation.Screen name='Formations' component={FormationsScreen} options={navOptionHandler}/>
+        <StackFormation.Screen name='FormationsDetail' component={FormationsScreenDetail} options={navOptionHandler}/>
+    </StackFormation.Navigator>
+  )
+}
+
+const StackInformation = createStackNavigator()
+function InformationsStack() {
+  return (
+    <StackInformation.Navigator initialRouteName='Informations' headerMode='none'>
+        <StackInformation.Screen name='Informations' component={InformationsScreen} options={navOptionHandler}/>
+        <StackInformation.Screen name='InformationsDetail' component={InformationsScreenDetail} options={navOptionHandler}/>
+    </StackInformation.Navigator>
+  )
+}
 
 const Tab = createBottomTabNavigator()
 function TabNavigator() {
@@ -58,21 +87,31 @@ function TabNavigator() {
                       iconName = focused
                         ? 'home'
                         : 'home-outline';
-                    } else if (route.name === 'Settings') {
+                    } else if (route.name === 'Jobs') {
                       iconName = focused 
-                        ? 'settings' 
-                        : 'settings-outline';
+                        ? 'keyboard' 
+                        : 'keyboard-outline';
+                    } else if (route.name === 'Formations') {
+                      iconName = focused 
+                        ? 'script' 
+                        : 'script-outline';
+                    } else if (route.name === 'Informations') {
+                      iconName = focused 
+                        ? 'magnify' 
+                        : 'magnify-plus-outline';
                     }
                     return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
                   },
               })}
               tabBarOptions={{
-                  activeTintColor: 'red',
+                  activeTintColor: '#9400d3',
                   inactiveTintColor: 'black',
               }}
               >
                 <Tab.Screen name="Home" component={HomeStack} />
-                <Tab.Screen name="Settings" component={SettingStack} />
+                <Tab.Screen name="Jobs" component={JobStack} />
+                <Tab.Screen name="Formations" component={FormationStack} />
+                <Tab.Screen name="Informations" component={InformationsStack} />
         </Tab.Navigator>
   )
 }
@@ -82,9 +121,11 @@ function TabNavigator() {
 const Drawer = createDrawerNavigator()
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="MenuTab" drawerContent={CustomDrawerContent}>
-        <Drawer.Screen name="MenuTab" component={TabNavigator} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+    <Drawer.Navigator initialRouteName="Accueil" drawerContent={CustomDrawerContent}>
+        <Drawer.Screen name="Accueil" component={TabNavigator} />
+        <Drawer.Screen name="Aboutme" component={AboutmeScreen} />
+        <Drawer.Screen name="Documents" component={DocumentsScreen} />
+        <Drawer.Screen name="Mecontacter" component={MecontacterScreen} />
     </Drawer.Navigator>
   )
 }
