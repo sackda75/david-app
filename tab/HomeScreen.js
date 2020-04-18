@@ -58,7 +58,7 @@ function HomeScreen({navigation}) {
                           <Text style={{fontStyle: 'italic', fontSize: 15}}>Quel est le language utilisé ?</Text>
                       {br}
                       {br}
-                          Cette application est développée en language REACT NATIVE <MaterialCommunityIcons name='react' color='#48dbfb' size={18} /> qui l'avantage d'être rapide et cross-plateform <MaterialCommunityIcons name='android' color='#6ab04c' size={18} /><MaterialCommunityIcons name='apple' color='#596275' size={18} /><MaterialCommunityIcons name='windows' color='#0fbcf9' size={18} />.
+                          Cette application est développée en language REACT NATIVE <MaterialCommunityIcons name='react' color='#48dbfb' size={18} /> qui a l'avantage d'être rapide et cross-plateform <MaterialCommunityIcons name='android' color='#6ab04c' size={18} /><MaterialCommunityIcons name='apple' color='#596275' size={18} /><MaterialCommunityIcons name='windows' color='#0fbcf9' size={18} />.
                       {br}
                       {br}
                       {br}

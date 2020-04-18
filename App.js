@@ -27,21 +27,38 @@ import LoginScreen from './auth/LoginScreen'
 import RegisterScreen from './auth/RegisterScreen'
 
 
-
-
 const navOptionHandler = () => ({
     hearderShown: false
 })
-
 
 
 const StackHome = createStackNavigator()
 function HomeStack() {
     return (
       <StackHome.Navigator initialRouteName='Home' headerMode='none'>
-          <StackHome.Screen  name='Home' component={HomeScreen} options={navOptionHandler}/>
+          <StackHome.Screen name='Home' component={HomeScreen} options={navOptionHandler}/>
           <StackHome.Screen name='HomeDetail' component={HomeScreenDetail} options={navOptionHandler}/>
       </StackHome.Navigator>
+    )
+}
+
+const StackHomeDetail = createStackNavigator()
+function HomeDetailStack() {
+    return (
+      <StackHomeDetail.Navigator initialRouteName='HomeDetail' headerMode='none'>
+          <StackHomeDetail.Screen name='HomeDetail' component={HomeScreenDetail} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Home' component={HomeScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Jobs' component={JobsScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='JobsDetail' component={JobsScreenDetail} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Formations' component={FormationsScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='FormationsDetail' component={FormationsScreenDetail} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Informations' component={InformationsScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='InformationsDetail' component={InformationsScreenDetail} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Home' component={HomeScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Aboutme' component={AboutmeScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Documents' component={DocumentsScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Mecontacter' component={MecontacterScreen} options={navOptionHandler}/>
+      </StackHomeDetail.Navigator>
     )
 }
 
@@ -49,7 +66,7 @@ const StackJob = createStackNavigator()
 function JobStack() {
     return (
       <StackJob.Navigator initialRouteName='Jobs' headerMode='none'>
-          <StackJob.Screen  name='Jobs' component={JobsScreen} options={navOptionHandler}/>
+          <StackJob.Screen name='Jobs' component={JobsScreen} options={navOptionHandler}/>
           <StackJob.Screen name='JobsDetail' component={JobsScreenDetail} options={navOptionHandler}/>
       </StackJob.Navigator>
     )

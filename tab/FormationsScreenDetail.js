@@ -99,7 +99,7 @@ function FormationsScreenDetail({navigation}) {
                                 {br}
                                 {br}
                                     <Text>
-                                    Le lycée de l'Essouriau a ouvert à la rentrée 1976, il y a, donc, tout juste quarante ans, avant même la création des Ulis en 1977. Il s’agissait de deux établissements en un - l’un dédié à l’enseignement général, l’autre à l’enseignement technique – mais relevant d’une même direction. Ils ont été fusionnés en 1991, il y a un quart de siècle, pour donner le lycée polyvalent actuel, en prenant le nom de l’Essouriau.
+                                    Le lycée de l'Essouriau a ouvert à la rentrée 1976, il y a, donc, tout juste quarante ans, avant même la création des Ulis en 1977 . Il s’agissait de deux établissements en un - l’un dédié à l’enseignement général, l’autre à l’enseignement technique – mais relevant d’une même direction. Ils ont été fusionnés en 1991, il y a un quart de siècle, pour donner le lycée polyvalent actuel, en prenant le nom de l’Essouriau.
                                 {br}
                                 {br}
                                     Le lycée de l’Essouriau a débuté avec un peu moins de 500 élèves. Après un pic de 1 700 au début des années 2000, il en compte aujourd’hui de l’ordre de 1 450. Ce qui le maintient à une échelle humaine. Il a depuis accueilli un public très divers : des jeunes du quartier, de la future ville des Ulis, mais aussi de Bures ou d’Orsay. Nous en recrutions jusqu’à la vallée de Chevreuse avant qu’un lycée n’y soit ouvert.

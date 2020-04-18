@@ -3,6 +3,7 @@ import { Text, View, SafeAreaView, StyleSheet, ScrollView } from 'react-native'
 import CustomHeader from '../CustomHeader'
 import Unorderedlist from 'react-native-unordered-list' 
 import { Divider } from 'react-native-elements'
+import {  MaterialCommunityIcons} from '@expo/vector-icons'
 
 const HomeScreenDetail = ({navigation}) => {
   const br = `\n`
@@ -20,23 +21,23 @@ const HomeScreenDetail = ({navigation}) => {
                 <ScrollView>
 
                   <Unorderedlist bulletUnicode={0x29BF} style={{fontSize: 18}}><Text style={{fontSize: 18}}>Home</Text>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Présentation</Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Home')}>Présentation <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                             <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Sommaire</Text></Unorderedlist>
                   </Unorderedlist>
                   <Text>{br}</Text>
                   <Unorderedlist bulletUnicode={0x29BF} style={{fontSize: 18}}><Text style={{fontSize: 18}}>Jobs</Text>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Parcours professionnels</Text></Unorderedlist>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Les entreprises</Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Jobs')}>Parcours professionnels <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('JobsDetail')}>Les entreprises <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                   </Unorderedlist>
                   <Text>{br}</Text>
                   <Unorderedlist bulletUnicode={0x29BF} style={{fontSize: 18}}><Text style={{fontSize: 18}}>Formations</Text>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Education</Text></Unorderedlist>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Les écoles de formation</Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Formations')}>Education <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('FormationsDetail')}>Les écoles de formation <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                   </Unorderedlist>
                   <Text>{br}</Text>
                   <Unorderedlist bulletUnicode={0x29BF} style={{fontSize: 18}}><Text style={{fontSize: 18}}>Informations</Text>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Renseignements</Text></Unorderedlist>
-                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>En savoir plus</Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Informations')}>Renseignements <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                            <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('InformationsDetail')}>En savoir plus <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                   </Unorderedlist>
 
                   <Text>{br}</Text>
@@ -46,10 +47,10 @@ const HomeScreenDetail = ({navigation}) => {
                   <Text>{br}</Text>
 
                   <Unorderedlist bulletUnicode={0x29BF} style={{fontSize: 18}}><Text style={{fontSize: 18}}>Menu Glissant</Text>
-                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Accueil</Text></Unorderedlist>
-                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>About Me</Text></Unorderedlist>
-                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Documents</Text></Unorderedlist>
-                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Me Contacter</Text></Unorderedlist>
+                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Home')}>Accueil <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Aboutme')}>About Me <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Documents')}>Documents <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
+                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Mecontacter')}>Me Contacter <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                       <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}}>Déconnexion</Text></Unorderedlist>
                   </Unorderedlist>
 

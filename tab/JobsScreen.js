@@ -49,7 +49,7 @@ function JobsScreen({navigation}) {
                                 {br}
                                 {br}
                                 {br}
-                                    <Text style={{fontStyle: 'italic'}}>2016 - 2019</Text>{br}
+                                    <Text style={{fontStyle: 'italic'}}>2016 - 2020</Text>{br}
                                     <Text style={{fontWeight: 'bold', fontSize: 16}}>GALERIES LAFAYETTE ROYAL QUARTZ</Text>{br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Roissy Charles de Gaulle (95){br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Conseiller de vente en horlogerie{br}
