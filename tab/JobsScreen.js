@@ -52,7 +52,7 @@ function JobsScreen({navigation}) {
                                 {br}
                                     <Text style={{fontStyle: 'italic'}}>2016 - 2020</Text>{br}
                                     <Text style={{fontWeight: 'bold', fontSize: 16}}>GALERIES LAFAYETTE ROYAL QUARTZ</Text>{br}
-                                    <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Roissy Charles de Gaulle (95){br}
+                                    <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Aéroport Roissy Charles de Gaulle (95){br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Conseiller de vente en horlogerie{br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Commercialisation des marques premiums{br} 
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> ROLEX, CARTIER, BREITLING, OMEGA{br} 
