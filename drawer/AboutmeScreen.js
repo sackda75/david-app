@@ -74,7 +74,7 @@ function AboutmeScreen({ navigation }) {
                     
 
                     <View style={styles.must}>
-                            <Text style={{fontWeight: 'bold', fontSize: 16}}>L'AUTOMOBILE D'EXCEPTION</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 16}}>L' AUTOMOBILE D'EXCEPTION</Text>
                             <Text style={styles.vert}>En automobiles, le marché de l’ultra-luxe est un marché de niche. Il progresse plus rapidement que les autres, Bentley, Lamborghini ou encore Rolls Royce enregistrant des chiffres record. Mais le paradoxe guette : si l’accroissement des ventes se révèle bénéfique pour le résultat de ces grands constructeurs, comment préserver les valeurs essentielles à une entreprise du luxe ? Acquérir une Lamborghini, ce n’est pas acheter une voiture, mais réaliser un rêve. Paradoxe ultime pour un pays qui est numéro 1 des produits de luxe : il se vend aujourd’hui moins de Ferrari, Aston Martin, McLaren, Bentley, Bugatti, Lamborghini, Rolls-Royce, Porsche ou Maserati qu’en Allemagne, qu’en Grande-Bretagne et même qu’en Italie.</Text>
                     </View>
 

@@ -39,6 +39,7 @@ function JobsScreen({navigation}) {
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> JAVASCRIPT <MaterialCommunityIcons name='language-javascript' color='#ffd32a' size={18} /> - JQUERY <MaterialCommunityIcons name='jquery' color='#3867d6' size={18} />{br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Node.JS <MaterialCommunityIcons name='nodejs' color='#44bd32' size={18} /> - Express - MongoDB{br}
                                     <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Git <MaterialCommunityIcons name='git' color='#e84118' size={18} /> - Github <MaterialCommunityIcons name='github-circle' color='#1e272e' size={18} /> - Heroku{br}
+                                    <MaterialCommunityIcons name='play' color='#9400d3' size={15} /> Firebase <MaterialCommunityIcons name='firebase' color='#f39c12' size={18} />{br}
                                 {br}
                                 {br}
                                 <Divider style={{ backgroundColor: 'black', width: 330, height: 1 }} />

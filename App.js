@@ -58,6 +58,7 @@ function HomeDetailStack() {
           <StackHomeDetail.Screen name='Aboutme' component={AboutmeScreen} options={navOptionHandler}/>
           <StackHomeDetail.Screen name='Documents' component={DocumentsScreen} options={navOptionHandler}/>
           <StackHomeDetail.Screen name='Mecontacter' component={MecontacterScreen} options={navOptionHandler}/>
+          <StackHomeDetail.Screen name='Login' component={LoginScreen} options={navOptionHandler}/>
       </StackHomeDetail.Navigator>
     )
 }
