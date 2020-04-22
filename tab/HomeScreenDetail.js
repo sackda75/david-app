@@ -4,8 +4,14 @@ import CustomHeader from '../CustomHeader'
 import Unorderedlist from 'react-native-unordered-list' 
 import { Divider } from 'react-native-elements'
 import {  MaterialCommunityIcons} from '@expo/vector-icons'
+import * as firebase from 'firebase'
 
 const HomeScreenDetail = ({navigation}) => {
+
+  const signOutUser = () => {
+    firebase.auth().signOut()
+  }
+
   const br = `\n`
   return (
     <SafeAreaView style={{ flex: 1, marginTop: 10 }}>
@@ -51,7 +57,7 @@ const HomeScreenDetail = ({navigation}) => {
                       <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Aboutme')}>About Me <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                       <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Documents')}>Documents <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
                       <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Mecontacter')}>Me Contacter <MaterialCommunityIcons name='plus-circle' size={16} color='#9400d3' /></Text></Unorderedlist>
-                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={() => navigation.navigate('Login')}>Déconnexion <MaterialCommunityIcons name='logout' size={16} color='#9400d3' /></Text></Unorderedlist>
+                      <Unorderedlist bulletUnicode={0x2023} color='#9400d3' style={{fontSize:  16}}><Text style={{fontSize:  16}} onPress={signOutUser}>Déconnexion <MaterialCommunityIcons name='logout' size={16} color='#9400d3' /></Text></Unorderedlist>
                   </Unorderedlist>
 
                   </ScrollView>

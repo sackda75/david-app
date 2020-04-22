@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image } from 'react-native'
+import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
 import PassMeter from 'react-native-passmeter'
+import * as firebase from 'firebase'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -9,34 +10,58 @@ function RegisterScreen({navigation}) {
   const [email, setEmail] = useState("")
   console.log(email)
 
-  const [nom, setNom] = useState("")
-  console.log(nom)
+  const [name, setName] = useState("")
+  console.log(name)
 
   const [password, setPassword] = useState("")
   console.log(password)
+
+  const [errorMessage, setErrorMessage] = useState(null)
+
+  const handleSignUp = () => {
+        
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            return userCredentials.user.updateProfile({
+                displayName: name
+            })
+        })
+        .catch(error => setErrorMessage(error.message))
+}
 
     return (
       <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={styles.container} source={require('../assets/fond2.png')} >
 
-          
+          <KeyboardAvoidingView>
             <Image 
-                style={{width: 150, height: 150, position: 'absolute', top: 1, marginTop: 50}}
+                style={{width: 150, height: 150, top: 1, marginTop: 50}}
                 source={require('../assets/logo1.png')}
             />
+          </KeyboardAvoidingView>
+                
 
-        <Text style={styles.must}>S'inscrire</Text>
+                <View style={styles.errorMessage}>
+                      <Text>{errorMessage && <Text style={styles.error}>{errorMessage}</Text>}</Text>
+                </View>
+
+                <Text style={styles.must}>S'inscrire</Text>
+                
                 <TextInput 
                     style={styles.input}
                     placeholder="Saisir votre email"
                     onChangeText={email => setEmail(email)}
+                    value={email}
                 />
 
                 <TextInput 
                     style={styles.input}
                     maxLength={15}
                     placeholder="Saisir votre nom"
-                    onChangeText={nom => setNom(nom)}
+                    onChangeText={name => setName(name)}
+                    value={name}
                 />
 
                 <TextInput 
@@ -45,6 +70,7 @@ function RegisterScreen({navigation}) {
                     secureTextEntry={true}
                     placeholder="Saisir votre mot de passe"
                     onChangeText={password => setPassword(password)}
+                    value={password}
                 />
 
                 <View style={{margin: 10}}>
@@ -60,13 +86,23 @@ function RegisterScreen({navigation}) {
                 <TouchableOpacity
                     style={styles.botao}
                     activeOpacity = { 0.75 } // number
-                    onPress={() => navigation.navigate('HomeApp')}
+                    onPress={handleSignUp}
                 >
                     <Text style={styles.botaoText}>VALIDER</Text>
                 </TouchableOpacity>
 
-                <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
+                {/* <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
                     <Text style={styles.must} onPress={() => navigation.navigate('HomeApp')}>Continuer sans s'inscrire</Text>
+                </View> */}
+
+                <View style={{      
+                        width: '100%', 
+                        height: 160, 
+                        justifyContent: 'center', 
+                        alignItems: 'center',
+                        
+                        bottom: 10}}>
+                    <Text style={styles.vert} onPress={() => navigation.navigate('Login')}>Vous avez déjà un compte</Text>
                 </View>
 
 
@@ -97,7 +133,7 @@ function RegisterScreen({navigation}) {
       width: 325,
       height: 42,
       backgroundColor: "#9400d3",
-      marginTop: 10,
+      marginTop: 5,
       borderRadius: 20,
       justifyContent: 'center',
       alignItems: 'center',
@@ -117,7 +153,19 @@ function RegisterScreen({navigation}) {
     vert: {
       color: 'white',
       fontSize: 15
-    }
+    },
+    errorMessage: {
+      height: 72,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginHorizontal: 30
+  },
+  error: {
+      color: '#e9446a',
+      fontSize: 14,
+      fontWeight: '600',
+      textAlign: 'center'
+  }
   });
 
 export default RegisterScreen

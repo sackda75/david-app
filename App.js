@@ -6,6 +6,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
+import * as firebase from 'firebase'
+
 import HomeScreen from './tab/HomeScreen'
 import HomeScreenDetail from './tab/HomeScreenDetail'
 
@@ -23,8 +25,21 @@ import AboutmeScreen from './drawer/AboutmeScreen'
 import DocumentsScreen from './drawer/DocumentsScreen'
 import MecontacterScreen from './drawer/MecontacterScreen'
 
+import LoadingScreen from './auth/LoadingScreen'
 import LoginScreen from './auth/LoginScreen'
 import RegisterScreen from './auth/RegisterScreen'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAEjIEqHkANiindjxlzGqbynUr3Xic-Zq0",
+  authDomain: "reactnativeloginlogup.firebaseapp.com",
+  databaseURL: "https://reactnativeloginlogup.firebaseio.com",
+  projectId: "reactnativeloginlogup",
+  storageBucket: "reactnativeloginlogup.appspot.com",
+  messagingSenderId: "659543949086",
+  appId: "1:659543949086:web:a05f84894630771c2dd30f"
+};
+
+firebase.initializeApp(firebaseConfig)
 
 
 const navOptionHandler = () => ({
@@ -154,7 +169,8 @@ const StackApp = createStackNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <StackApp.Navigator initialRouteName='Login' headerMode='none'>
+      <StackApp.Navigator initialRouteName='Loading' headerMode='none'>
+        <StackApp.Screen name='Loading' component={LoadingScreen} options={navOptionHandler}/>
         <StackApp.Screen name='Login' component={LoginScreen} options={navOptionHandler}/>
         <StackApp.Screen name='Register' component={RegisterScreen} options={navOptionHandler}/>
         <StackApp.Screen name='HomeApp' component={DrawerNavigator} options={navOptionHandler}/>

@@ -1,9 +1,15 @@
 import React from 'react'
 import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-
+import * as firebase from 'firebase'
 
 function CustomDrawerContent(props) {
+
+    const signOutUser = () => {
+        firebase.auth().signOut()
+    }
+
+
       return (
 
         <SafeAreaView style={{flex: 1}}>
@@ -76,7 +82,7 @@ function CustomDrawerContent(props) {
                  
                   <TouchableOpacity
                       style={{marginTop: 20}}
-                      onPress={() => props.navigation.navigate('Login')}
+                      onPress={signOutUser}
                   >
                     <View style={{flexDirection: 'row'}}>
                         <MaterialCommunityIcons

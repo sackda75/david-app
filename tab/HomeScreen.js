@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Text, View, SafeAreaView, TouchableOpacity, Linking, StyleSheet, ScrollView, Image } from 'react-native'
 import CustomHeader from '../CustomHeader'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { Divider } from 'react-native-elements'
+import * as firebase from 'firebase'
 
 let monCv =  
     <Text 
@@ -12,6 +13,24 @@ let monCv =
     </Text>
 
 function HomeScreen({navigation}) {
+
+    const [email, setEmail] = useState('')
+    console.log(email)
+
+    
+    const [displayName, setDisplayName] = useState('')
+    console.log(displayName)
+
+    useEffect(() => {
+
+        const {email, displayName} = firebase.auth().currentUser
+        setEmail(email)
+        setDisplayName(displayName)
+
+      }, [])
+
+
+
   const br = `\n`
     return (
       <SafeAreaView style={{ flex: 1, marginTop: 10 }}>
@@ -22,6 +41,8 @@ function HomeScreen({navigation}) {
                 <View style={{alignSelf: 'center', marginBottom: 10}}>
                       <Text style={{fontWeight: 'bold', fontStyle: 'italic', fontSize: 20, textDecorationLine: 'underline'}}>PRESENTATION</Text>
                 </View>
+
+                <Text>Hi {email}</Text>
 
                 <ScrollView>
 
@@ -96,7 +117,7 @@ function HomeScreen({navigation}) {
                             <MaterialCommunityIcons name='plus-circle-outline' color='#9400d3' size={18} /> Sommaire
                     </Text>
 
-                    <View style={{marginBottom: 50, alignItems: 'center'}}>
+                    <View style={{marginBottom: 70, alignItems: 'center'}}>
                         <TouchableOpacity
                               style={{
                                   marginTop: 15,

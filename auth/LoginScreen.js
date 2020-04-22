@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image } from 'react-native'
+import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
 import PassMeter from 'react-native-passmeter'
 import * as Animatable from 'react-native-animatable'
+import * as firebase from 'firebase'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -13,18 +14,39 @@ function LoginScreen({navigation}) {
   const [password, setPassword] = useState("")
   console.log(password)
 
+  const [errorMessage, setErrorMessage] = useState(null)
+
+  const handleLogin = () => {
+    
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => setErrorMessage(error.message))
+}
+
     return (
       <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={styles.container} source={require('../assets/fond4.png')} >
 
+            <KeyboardAvoidingView>
+
             <Animatable.Image 
                 animation='bounceInDown'
                 duration={1500}
-                style={{width: 150, height: 150, position: 'absolute', top: 1, marginTop: 70}}
+                style={{width: 150, height: 150, top: 1}}
                 source={require('../assets/logo1.png')}
             />
 
-            <Text style={styles.must}>Se connecter</Text>
+            </KeyboardAvoidingView>              
+
+            <View style={styles.errorMessage}>
+                <Text>{errorMessage && <Text style={styles.error}>{errorMessage}</Text>}</Text>
+            </View>
+
+
+            <Animatable.View
+                animation='bounceInRight'
+                duration={1500}
+            >
+                <Text style={styles.must}>Se connecter</Text>
+            </Animatable.View>
 
               <Animatable.View
                 animation='bounceInRight'
@@ -73,25 +95,34 @@ function LoginScreen({navigation}) {
                   <TouchableOpacity
                       style={styles.botao}
                       activeOpacity = { 0.75 } // number
-                      onPress={() => navigation.navigate('HomeApp')}
+                      onPress={handleLogin}
                   >
                       <Text style={styles.botaoText}>VALIDER</Text>
                   </TouchableOpacity>
                 </Animatable.View>
 
-                <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
+                {/* <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
                     <Text style={styles.must} onPress={() => navigation.navigate('HomeApp')}>Continuer sans s'inscrire</Text>
-                </View>
+                </View> */}
 
+
+              <Animatable.View
+                animation='bounceInRight'
+                duration={1500}
+              >
                 <View style={{      
                         width: '100%', 
-                        height: 50, 
+                        height: 90, 
                         justifyContent: 'center', 
                         alignItems: 'center',
-                        position: 'absolute',
-                        bottom: 10}}>
+                        marginTop: 20,
+                        bottom: 1
+                      }}
+                >
                     <Text style={styles.vert} onPress={() => navigation.navigate('Register')}>Créer un nouveau compte</Text>
                 </View>
+              </Animatable.View>
+                
         </ImageBackground>
       </SafeAreaView>
     )
@@ -119,7 +150,7 @@ const styles = StyleSheet.create({
     width: 325,
     height: 42,
     backgroundColor: "#9400d3",
-    marginTop: 10,
+    marginTop: 1,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -137,7 +168,19 @@ const styles = StyleSheet.create({
   vert: {
     color: 'white',
     fontSize: 15
-  }
+  },
+  errorMessage: {
+    height: 72,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 30
+},
+error: {
+    color: '#e9446a',
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center'
+},
 })
 
 export default LoginScreen
