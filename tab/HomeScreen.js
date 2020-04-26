@@ -42,10 +42,9 @@ function HomeScreen({navigation}) {
                       <Text style={{fontWeight: 'bold', fontStyle: 'italic', fontSize: 20, textDecorationLine: 'underline'}}>PRESENTATION</Text>
                 </View>
 
-                <Text>Hi {email}</Text>
-
                 <ScrollView>
 
+                <Text>Bonjour {email}</Text>
 
                 <View style={{height: 200, alignItems: 'center', justifyContent: 'center', marginTop: 0, backgroundColor: '#0000'}}>
                     <Image

@@ -3,6 +3,9 @@ import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Ima
 import CustomHeader from '../CustomHeader'
 import { Divider } from 'react-native-elements'
 import {  MaterialCommunityIcons} from '@expo/vector-icons'
+import MapView from 'react-native-map-clustering'
+import { Marker } from 'react-native-maps'
+
 
 let stWitz =  
     <Text 
@@ -79,6 +82,19 @@ function InformationsScreenDetail({navigation}) {
                                 {br}
                                     <Text>
                                     <Text style={{fontWeight: 'bold', fontSize: 16}}>ST WITZ</Text>{br}
+                                {br}
+                                    <MapView  
+                                            initialRegion={{
+                                                latitude: 49.090855,
+                                                longitude: 2.565023,
+                                                latitudeDelta: 0.0922,
+                                                longitudeDelta: 0.0461,
+                                            }} 
+                                            style={{ width: 330, height: 400 }}  
+                                    >  
+                                        <Marker coordinate={{ latitude: 49.090855, longitude: 2.565023 }} title={'My Home'} />   
+                                    </MapView>
+                                {br}
                                     Saint-Witz (prononciation : sɛ̃vits) est une commune du Val-d'Oise située en plaine de France, à environ 31 km au nord-est de Paris et à 9 km de l'aéroport Roissy-Charles-de-Gaulle. Ses habitants sont les Wézien(ne)s, Vézéen(ne)s ou Vézien(ne)s. Elle appartient à l'unité urbaine de Fosses et à l'aire urbaine de Paris.
                                 {br}
                                 {br}

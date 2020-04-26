@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image } from 'react-native'
+import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image, ImageBackground } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as firebase from 'firebase'
 
@@ -14,12 +14,18 @@ function CustomDrawerContent(props) {
 
         <SafeAreaView style={{flex: 1}}>
 
-          <View style={{height: 200, alignItems: 'center', justifyContent: 'center', marginTop: 0, backgroundColor: '#9400d3'}}>
-              <Image
-                      style={{width: 120, height: 120, borderRadius: 60}} 
+            <View style={{height: 200, alignItems: 'center', justifyContent: 'center', marginTop: 0}}>
+
+            <Image
+                      style={{width: 280, height: 200}} 
+                      source={require('./assets/fond5.png')}
+            />
+            <Image
+                      style={{width: 120, height: 120, borderRadius: 60, position: 'absolute'}} 
                       source={require('./assets/dave.png')}
-              />
-          </View>
+            />
+
+            </View>
 
           <ScrollView style={{marginLeft: 10, marginTop: 60}}>
 

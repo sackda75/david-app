@@ -44,7 +44,7 @@ function RegisterScreen({navigation}) {
                 
 
                 <View style={styles.errorMessage}>
-                      <Text>{errorMessage && <Text style={styles.error}>{errorMessage}</Text>}</Text>
+                      <Text style={{textAlign: 'center'}}>{errorMessage && <Text style={styles.error}>{errorMessage}</Text>}</Text>
                 </View>
 
                 <Text style={styles.must}>S'inscrire</Text>

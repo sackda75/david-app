@@ -3,6 +3,8 @@ import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Ima
 import CustomHeader from '../CustomHeader'
 import { Divider } from 'react-native-elements'
 import {  MaterialCommunityIcons} from '@expo/vector-icons'
+import MapView from 'react-native-map-clustering'
+import { Marker } from 'react-native-maps'
 
 let laCpasule =  
     <Text 
@@ -52,6 +54,19 @@ function FormationsScreenDetail({navigation}) {
                                     />
                                 {br}
                                 {br}
+                                {br}
+                                {br}
+                                    <MapView  
+                                            initialRegion={{
+                                                latitude: 48.864853,
+                                                longitude: 2.350225,
+                                                latitudeDelta: 0.00575,
+                                                longitudeDelta: 0.002875,
+                                            }} 
+                                            style={{ width: 330, height: 200 }}  
+                                    >  
+                                        <Marker coordinate={{ latitude: 48.864853, longitude: 2.350225 }} title={'La Capsule'} />   
+                                    </MapView>
                                 {br}
                                     <Text>
                                     La Capsule est une école de code pour les entrepreneurs et les Digital Makers qui souhaitent apprendre à coder une appli Web ou Mobile.
