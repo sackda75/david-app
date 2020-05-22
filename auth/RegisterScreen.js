@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
 import PassMeter from 'react-native-passmeter'
 import * as firebase from 'firebase'
+import TouchableScale from 'react-native-touchable-scale'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -83,13 +84,14 @@ function RegisterScreen({navigation}) {
                 />
                 </View>
 
-                <TouchableOpacity
+                <TouchableScale
                     style={styles.botao}
                     activeOpacity = { 0.75 } // number
+                    activeScale={0.9}
                     onPress={handleSignUp}
                 >
                     <Text style={styles.botaoText}>VALIDER</Text>
-                </TouchableOpacity>
+                </TouchableScale>
 
                 {/* <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>
                     <Text style={styles.must} onPress={() => navigation.navigate('HomeApp')}>Continuer sans s'inscrire</Text>

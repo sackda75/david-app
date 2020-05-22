@@ -3,6 +3,7 @@ import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground
 import PassMeter from 'react-native-passmeter'
 import * as Animatable from 'react-native-animatable'
 import * as firebase from 'firebase'
+import TouchableScale from 'react-native-touchable-scale'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -17,9 +18,8 @@ function LoginScreen({navigation}) {
   const [errorMessage, setErrorMessage] = useState(null)
 
   const handleLogin = () => {
-    
     firebase.auth().signInWithEmailAndPassword(email, password).catch(error => setErrorMessage(error.message))
-}
+  }
 
     return (
       <SafeAreaView style={{ flex: 1}}>
@@ -92,13 +92,14 @@ function LoginScreen({navigation}) {
                   animation='bounceInRight'
                   duration={1500}
                 >
-                  <TouchableOpacity
+                  <TouchableScale
                       style={styles.botao}
                       activeOpacity = { 0.75 } // number
+                      activeScale={0.9}
                       onPress={handleLogin}
                   >
                       <Text style={styles.botaoText}>VALIDER</Text>
-                  </TouchableOpacity>
+                  </TouchableScale>
                 </Animatable.View>
 
                 {/* <View style={{marginTop: 15, marginEnd: 25, alignSelf: 'flex-end'}}>

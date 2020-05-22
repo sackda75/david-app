@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Image, Linking } from 'react-native'
 import CustomHeader from '../CustomHeader'
 import { Divider } from 'react-native-elements'
-import {  MaterialCommunityIcons} from '@expo/vector-icons'
+import {  MaterialCommunityIcons } from '@expo/vector-icons'
 
 let laCpasule =  
     <Text 
