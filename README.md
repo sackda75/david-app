@@ -1,4 +1,5 @@
 Cliquer sur l'image pour lancer la vidéo[![Watch the video](https://i.imgur.com/EWTszHm.png)](https://www.youtube.com/watch?v=KmXwTunqwbw&t)
+
 ou sinon :
 1. Télécharger l'application EXPO
 2. Ouvrir l'application
