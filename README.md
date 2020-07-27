@@ -3,6 +3,6 @@ Cliquer sur l'image pour lancer la vidéo[![Watch the video](https://i.imgur.com
 ou sinon :
 1. Télécharger l'application EXPO
 2. Ouvrir l'application
-3. appuyer sur "Scan QR Code" 
+3. Appuyer sur "Scan QR Code" 
 
 ![alt text](https://i.imgur.com/8HGtktX.png)
