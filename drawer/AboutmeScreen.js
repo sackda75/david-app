@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Image } from 'react-native'
-import { SliderBox } from "react-native-image-slider-box"
-import CustomHeader from '../CustomHeader'
-import { Divider } from 'react-native-elements'
+
+import { SliderBox } from 'react-native-image-slider-box'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 function AboutmeScreen({ navigation }) {
 

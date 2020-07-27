@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
+import * as firebase from 'firebase'
 import PassMeter from 'react-native-passmeter'
 import * as Animatable from 'react-native-animatable'
-import * as firebase from 'firebase'
 import TouchableScale from 'react-native-touchable-scale'
+
+import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -28,6 +29,7 @@ function LoginScreen({navigation}) {
             <KeyboardAvoidingView>
 
             <Animatable.Image 
+                useNativeDriver={true}
                 animation='bounceInDown'
                 duration={1500}
                 style={{width: 150, height: 150, top: 1}}
@@ -42,6 +44,7 @@ function LoginScreen({navigation}) {
 
 
             <Animatable.View
+                useNativeDriver={true}
                 animation='bounceInRight'
                 duration={1500}
             >
@@ -49,6 +52,7 @@ function LoginScreen({navigation}) {
             </Animatable.View>
 
               <Animatable.View
+                useNativeDriver={true}
                 animation='bounceInRight'
                 duration={1500}
               >
@@ -60,6 +64,7 @@ function LoginScreen({navigation}) {
               </Animatable.View>
 
               <Animatable.View
+                useNativeDriver={true}
                 animation='bounceInRight'
                 duration={1500}
               >
@@ -74,6 +79,7 @@ function LoginScreen({navigation}) {
 
 
               <Animatable.View
+                useNativeDriver={true}
                 animation='bounceInRight'
                 duration={1500}
               >
@@ -89,6 +95,7 @@ function LoginScreen({navigation}) {
                 </Animatable.View>
 
                 <Animatable.View
+                  useNativeDriver={true}
                   animation='bounceInRight'
                   duration={1500}
                 >
@@ -108,6 +115,7 @@ function LoginScreen({navigation}) {
 
 
               <Animatable.View
+                useNativeDriver={true}
                 animation='bounceInRight'
                 duration={1500}
               >

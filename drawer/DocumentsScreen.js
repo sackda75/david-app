@@ -1,7 +1,9 @@
 import React from 'react'
-import { Text, View, SafeAreaView, Linking, StyleSheet, ScrollView } from 'react-native'
-import CustomHeader from '../CustomHeader'
+
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, Linking, StyleSheet, ScrollView } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 let monCv =  
     <Text 

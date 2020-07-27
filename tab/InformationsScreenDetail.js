@@ -1,11 +1,12 @@
 import React from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Image, Linking } from 'react-native'
-import CustomHeader from '../CustomHeader'
-import { Divider } from 'react-native-elements'
-import {  MaterialCommunityIcons} from '@expo/vector-icons'
 import MapView from 'react-native-map-clustering'
-import { Marker } from 'react-native-maps'
 
+import { Marker } from 'react-native-maps'
+import { Divider } from 'react-native-elements'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, StyleSheet, Image, Linking } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 let stWitz =  
     <Text 
@@ -29,7 +30,7 @@ let formula =
     </Text>
 
 const goToTop = () => {
-  scroll.scrollTo({x: 0, y: 0, animated: true});
+  scroll.scrollTo({x: 0, y: 0, animated: true })
 }
 
 function InformationsScreenDetail({navigation}) {

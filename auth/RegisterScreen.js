@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
-import PassMeter from 'react-native-passmeter'
 import * as firebase from 'firebase'
+import PassMeter from 'react-native-passmeter'
 import TouchableScale from 'react-native-touchable-scale'
+
+import { Text, View, SafeAreaView, StyleSheet, ImageBackground, TextInput, Image, KeyboardAvoidingView } from 'react-native'
 
 const MAX_LEN = 15, MIN_LEN = 6, PASS_LABELS = ["Trop court", "Faible", "Normal", "Fort", "Sécurité maximale"]
 
@@ -119,7 +120,7 @@ function RegisterScreen({navigation}) {
       flex: 1,
       backgroundColor: '#1e90ff',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'center'
     },
     input: {
       marginTop: 10,
@@ -141,7 +142,6 @@ function RegisterScreen({navigation}) {
       alignItems: 'center',
       borderWidth: 1,
       borderColor: '#ffff'
-     
     },
     botaoText: {
       fontSize: 16,
@@ -162,12 +162,12 @@ function RegisterScreen({navigation}) {
       justifyContent: 'center',
       marginHorizontal: 30
   },
-  error: {
+    error: {
       color: '#e9446a',
       fontSize: 14,
       fontWeight: '600',
       textAlign: 'center'
   }
-  });
+  })
 
 export default RegisterScreen

@@ -1,5 +1,7 @@
 import React from 'react'
 
+require('react-native').unstable_enableLogBox()
+
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, Linking, StyleSheet, ScrollView, Image } from 'react-native'
-import CustomHeader from '../CustomHeader'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { Divider } from 'react-native-elements'
 import * as firebase from 'firebase'
+
+import { Divider } from 'react-native-elements'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, TouchableOpacity, Linking, StyleSheet, ScrollView, Image } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 let monCv =  
     <Text 

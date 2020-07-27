@@ -1,7 +1,8 @@
 import React from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image, ImageBackground } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as firebase from 'firebase'
+
+import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image } from 'react-native'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 function CustomDrawerContent(props) {
 

@@ -1,10 +1,12 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet, ScrollView } from 'react-native'
-import CustomHeader from '../CustomHeader'
-import Unorderedlist from 'react-native-unordered-list' 
-import { Divider } from 'react-native-elements'
-import {  MaterialCommunityIcons} from '@expo/vector-icons'
 import * as firebase from 'firebase'
+import Unorderedlist from 'react-native-unordered-list' 
+
+import { Divider } from 'react-native-elements'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, StyleSheet, ScrollView } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 const HomeScreenDetail = ({navigation}) => {
 
