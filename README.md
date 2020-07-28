@@ -1,4 +1,4 @@
-Mon CV sous forme d'une app web mobile avec React Native, React Navigation 5 et Firebase - Version avec connexion par email
+Mon CV sous forme d'une app web mobile avec React Native, React Navigation 5 et Firebase - Version avec connexion par email.
 
 Cliquer sur l'image pour lancer la vidéo :
 
